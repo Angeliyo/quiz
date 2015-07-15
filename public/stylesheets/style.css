@@ -9,6 +9,11 @@ header, nav, section{ background: #eee; text-align: center; }
 footer              { background: #eee; text-align: center; }
 nav,span            { margin: 0px 10px 0px 0px; }
 
+.Correcto           { color:green }
+.Incorrecto         { color:red }
+.separador10        { margin-top: 10px }
+.volver             { margin-top: 20px }
+
 a:link              {text-decoration: none}
 a:visited           {text-decoration: none}
 a:active            {text-decoration: none}

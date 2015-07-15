@@ -1,2 +1,12 @@
-
-    <div><%= respuesta%></div>
+  <div>
+    A la pregunta: <strong><%= quiz.pregunta %></strong>
+  </div>
+  <div>
+    Has respondido: '<strong><%= userRespuesta %></strong>'
+  </div>
+  <div class="separador10">
+    <div>Y es... <span class="<%= respuesta%>"><%= respuesta%></span></div>
+  </div>
+  <div class="volver">
+    <a href="/quizes/<%=quiz.id%>"><-- Volver</a>
+  </div>
