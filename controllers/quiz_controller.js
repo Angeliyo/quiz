@@ -16,11 +16,24 @@ exports.load = function(req, res, next, quizId) {
 
 //GET /quizes
 exports.index = function(req,res){
-  models.Quiz.findAll().then(
-    function(quizes){
-      res.render('quizes/index.ejs', {quizes:quizes});
-    }
-  ).catch(function(error) {next(error);})
+  if(req.query.search){
+    var searchText = req.query.search;
+    // Se susituyen los espacios por comodines
+    searchText = searchText.replace(/ /g,'%');
+    // Se ponen comodines por delante y por detrás del texto de búsqueda
+    searchText = "%"+searchText+"%";
+    models.Quiz.findAll({where: ["pregunta like ?", searchText]}).then(
+      function(quizes){
+        res.render('quizes/index.ejs', {quizes:quizes, filtered:true});
+      }
+    ).catch(function(error) {next(error);});
+  }else{
+    models.Quiz.findAll().then(
+      function(quizes){
+        res.render('quizes/index.ejs', {quizes:quizes, filtered:false});
+      }
+    ).catch(function(error) {next(error);});
+  }
 };
 
 //GET /quizes/question
