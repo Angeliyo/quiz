@@ -1,10 +1,19 @@
-<table>
-  <% var i;
-    for(i=0; i<quizes.length; i++){ %>
-    <tr>
-      <td>
-        <span><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></span>
-      </td>
-    </tr>
-  <% } %>
-</table>
+<form method="get" action="/quizes/">
+  <div class="pregunta_input">
+    <input type="text" name="search" placeholder="Busca una pregunta"/>
+    <input class="button" type="submit" value="Buscar"/>
+  </div>
+</form>
+
+<% if(filtered) { %>
+<div>
+  <span>Resultado de la búsqueda: </span>
+</div>
+<div>
+    <% var i;
+      for(i=0; i<quizes.length; i++){ %>
+          <span><a href="<%= quizes[i].id %>"><%= quizes[i].pregunta %></a><br/></span>
+      </tr>
+    <% } %>
+</div>
+<% } %>
