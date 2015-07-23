@@ -5,7 +5,10 @@
     Has respondido: '<strong><%= userRespuesta %></strong>'
   </div>
   <div class="separador10">
-    <div>Y es... <span class="<%= respuesta%>"><%= respuesta%></span></div>
+    <div>Y es... <span class="<%= resultado%>"><%= resultado%></span></div>
+    <% if(resultado == 'Incorrecto') { %>
+    <div><span>La respuesta correcta es: <strong><%= respuesta%></strong></span></div>
+    <% } %>
   </div>
   <div class="volver">
     <a href="/quizes/<%=quiz.id%>"><-- Volver</a>
