@@ -12,16 +12,16 @@
 <div>
     <% var i;
       for(i=0; i<quizes.length; i++){ %>
-          <span><a href="<%= quizes[i].id %>"><%= quizes[i].pregunta %></a><br/></span>
-      </tr>
+          <span><a href="<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></span>
+          <span><a href="<%= quizes[i].id %>/edit"><button>Editar</button></a></span><br/>
     <% } %>
 </div>
 <% } else { %>
 <div>
     <% var i;
       for(i=0; i<quizes.length; i++){ %>
-          <span><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a><br/></span>
-      </tr>
+          <span><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></span>
+          <span><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></span><br/>
     <% } %>
 </div>
 <% } %>
