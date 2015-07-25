@@ -84,7 +84,6 @@ exports.edit = function(req,res){
 
 // PUT /quizes/:id
 exports.update = function(req,res){
-  console.log("LLEGO A UPDATE");
   req.quiz.pregunta = req.body.quiz.pregunta;
   req.quiz.respuesta = req.body.quiz.respuesta;
 
@@ -100,7 +99,13 @@ exports.update = function(req,res){
       }
     }
   );
+};
 
+// DELETE /quizes/:id
+exports.destroy = function(req,res){
+    req.quiz.destroy().then( function(){
+      res.redirect('/quizes');
+    }).catch(function(error){ next(error)})
 };
 
 //GET /author

@@ -1,3 +1,4 @@
+
 <form method="get" action="/quizes/">
   <div class="pregunta_input">
     <input type="text" name="search" placeholder="Busca una pregunta"/>
@@ -9,23 +10,41 @@
 <div>
   <span>Resultado de la búsqueda: </span>
 </div>
-<div>
-    <% var i;
-      for(i=0; i<quizes.length; i++){ %>
-          <span><a href="<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></span>
-          <span><a href="<%= quizes[i].id %>/edit"><button>Editar</button></a></span><br/>
-    <% } %>
-</div>
-<% } else { %>
-<div>
-    <% var i;
-      for(i=0; i<quizes.length; i++){ %>
-          <span><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></span>
-          <span><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></span><br/>
-    <% } %>
-</div>
-<% } %>
 
+<table>
+    <% var i;
+      for(i=0; i<quizes.length; i++){ %>
+        <tr>
+          <td><a href="<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+          <td><a href="<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
+          <td>
+            <form method="post" action="<%= quizes[i].id %>?_method=delete">
+              <button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
+                Borrar
+              </button>
+            </form>
+          </td>
+        </tr>
+    <% } %>
+</table>
+<% } else { %>
+<table>
+    <% var i;
+      for(i=0; i<quizes.length; i++){ %>
+        <tr>
+          <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+          <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
+          <td>
+            <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+              <button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
+                Borrar
+              </button>
+            </form>
+          </td>
+        </tr>
+    <% } %>
+</table>
+<% } %>
 <div>
   <a href="quizes/new"><button type="button">Crear Pregunta</button></a>
 </div>
