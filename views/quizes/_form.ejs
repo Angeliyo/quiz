@@ -1,6 +1,28 @@
-<label for="preg" class="rem">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>" /> <br/>
-<label for="resp" class="rem">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" /> <br/>
-<a href="/quizes"><button type="button">Cancelar</button></a>
-<input type="submit" value="Enviar" />
+<div>
+  <label for="preg" class="rem">Tema:</label>
+  <select id="mySelect" name="quiz[tema]">
+    <option value="">Selecciona un tema...</option>
+    <option value="Otro">Otro</option>
+    <option value="Humanidades">Humanidades</option>
+    <option value="Ocio">Ocio</option>
+    <option value="Ciencia">Ciencia</option>
+    <option value="Tecnologia">Tecnología</option>
+  </select>
+</div>
+<div>
+  <label for="preg" class="rem">Pregunta:</label>
+  <input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>" /> <br/>
+</div>
+<div>
+  <label for="resp" class="rem">Respuesta:</label>
+  <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" /> <br/>
+</div>
+<div>
+  <a href="/quizes"><button type="button">Cancelar</button></a>
+  <input type="submit" value="Enviar" />
+</div>
+
+<script>
+  // Script para seleccionar el valor adecuado en el 'select'
+  document.getElementById("mySelect").value = '<%= quiz.tema %>';
+</script>
