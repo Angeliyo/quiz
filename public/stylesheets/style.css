@@ -5,8 +5,10 @@ body                { font: 16px Georgia, serif; }
 #page-wrap > .main  { border:1px solid #999; padding: 1%;
                       margin-bottom: 1px; color: black; }
 section > div       { padding: 20px; }
-header, nav, section{ background: #eee; text-align: center; }
-footer              { background: #eee; text-align: center; }
+nav                 { background: #eee; text-align: left; }
+.navHeader          { background: #eee; width: 100%; text-decoration: underline; padding-right: 50px; padding-left: 46px;}
+header, section     { background: #eee; text-align: center; }
+footer              { float: bottom; background: #eee; text-align: center; }
 nav,span            { margin: 0px 10px 0px 0px; }
 #ErrorMsgs          { color: #f61; font-size: smaller}
 
@@ -20,7 +22,10 @@ nav,span            { margin: 0px 10px 0px 0px; }
 a:link              {text-decoration: none}
 a:visited           {text-decoration: none}
 a:active            {text-decoration: none}
-a:hover             {font-size:24; font-weight:bold; color: red;}
+a:hover             {font-size:24; color: red;}
+
+table, td           { border: 1px solid black; margin-left: auto; margin-right: auto;}
+td                  { text-align: center; padding: 10px 10px 10px 10px; margin: 10px 10px 10px 10px}
 
 .pregunta           { margin: 10px 10px 10px 10px; }
 .pregunta_input     { margin: 10px 10px 10px 10px; }
