@@ -17,6 +17,7 @@ nav,span            { margin: 0px 10px 0px 0px; }
 .separador10        { margin-top: 10px }
 .volver             { margin-top: 20px }
 
+.statisticsTitle    { font-size:22px; margin: 10px 10px 10px 10px;}
 .right              { float: right; }
 
 a:link              {text-decoration: none}
